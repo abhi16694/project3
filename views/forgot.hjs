@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Reset Password</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/css/bootstrap.min.css' />
+  <link rel='stylesheet' href='/css/signin.css' />
+  <link rel='stylesheet' href='/stylesheets/resume_css.css' />
+</head>
+
+<body bgcolor="#000000">
+  <div class="container">
+    <h1>Reset your Password</h1>
+    <div class="well">
+      <a href="/userLogin" class="btn btn-primary">Click Here for Login Page</a>
+      <form class="form-signin" action="/userLogin/resetPass" method="post">
+        <br> {{error}}
+        <p>
+          <input type="email" class="form-control" name="email" placeholder="Email" required="required" autofocus="autofocus"
+          />
+        </p>
+        <p>
+          <input type="text" class="form-control" name="username" placeholder="Username" required="required" />
+        </p>
+        <p>
+          <input type="password" class="form-control" name="password" placeholder="Password" required="required" />
+        </p>
+        <p>
+          <input type="password" class="form-control" name="passwordconf" placeholder="Confirm Password" required="required"
+          />
+        </p>
+        <p>
+          <input class="btn btn-lg btn-success btn-block" type="submit" /> </p>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Create Group</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/stylesheets/resume_css.css' />
+  <link href="/css/theme.css" rel="stylesheet">
+  <link rel='stylesheet' href='/css/signin.css' />
+  <link rel='stylesheet' href='/css/bootstrap.css' />
+</head>
+
+<body bgcolor="#000000">
+  <a href="/users?from={{fromuser}}">ChatRoom</a>
+  <a href="/userLogin/logout?from={{fromuser}}">Logout</a>
+  <div class="login_c">
+    <p>
+        <strong>Warning:</strong>Don't press submit button if you haven't selected a Friend or don't have anyone to select from.Click
+        ChatRoom link from above for other options.</p>
+      <p>
+    <h1>Create Group</h1>
+    <form action="/group/creategrp" method="post">
+      <br>
+      <input type="text" name="from" hidden="hidden" value="{{fromuser}}" />
+      <p>
+        <input type="text" name="gname" placeholder="Group Name" required="required" />
+      </p>
+      Add Members: {{#friends}}
+        <input type="checkbox" name="mem" value="{{username}}" />{{username}}</p>
+      {{/friends}}
+      <p>
+        <input class="btn btn-success" type="submit" /> </p>
+
+      {{error}}
+
+    </form>
+
+
+
+
+
+  </div>
+
+
+
+
+
+</body>
+
+</html>

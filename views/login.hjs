@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Login</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/css/bootstrap.min.css' />
+  <link rel='stylesheet' href='/css/signin.css' />
+  <link rel='stylesheet' href='/stylesheets/resume_css.css' />
+</head>
+
+<body bgcolor="#000000">
+  <div class="container">
+    <h1>Login to ChatRoom</h1>
+    <form class="form-signin" action="/userLogin/login" method="get">
+      <br> {{error}}
+      <p>
+        <input type="text" class="form-control" name="username" placeholder="Username" required="required" />
+      </p>
+      <p>
+        <input type="password" class="form-control" name="password" placeholder="Password" required="required" />
+      </p>
+      <p>
+        <input class="btn btn-lg btn-success btn-block" type="submit" />
+        <a href="/userLogin/forgot" class="btn btn-lg btn-warning btn-block">Forgot Password </a>
+      </p>
+      <p>
+        <a class="btn btn-lg btn-primary btn-block" href="/userLogin/register">Register</a>
+      </p>
+      <p>
+        <div class="row">
+          <div class="col-sm-6">
+            <a href="/userLogin/facebook">
+              <span class="fa fa-facebook" style="color:#365899"></span> Login with Facebook</a>
+          </div>
+          <div class="col-sm-6">
+            <a href="/userLogin/auth/google">
+              <span class="fa fa-google" style="color:#DB4437"></span> Login with Google</a>
+          </div>
+        </div>
+      </p>
+
+    </form>
+  </div>
+</body>
+
+</html>

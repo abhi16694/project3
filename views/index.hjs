@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link rel='stylesheet' href='/css/bootstrap.min.css' />
+    <link rel='stylesheet' href='/css/cover.css' />
+  </head>
+  <body>
+ <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+         
+
+          <div class="inner cover">
+            <h1 class="cover-heading">Welcome to Chat-Networking</h1>
+            <p class="lead">Find your friends by their Email address, connect with them ,chat with them privately or as a group :) </p>
+            <p class="lead">
+              <a href="/userLogin" class="btn btn-lg btn-secondary">Login</a>
+            </p>
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/abhi16694">@abhi16694</a>.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+   
+  </body>
+</html>

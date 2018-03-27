@@ -1,0 +1,28 @@
+{
+  "name": "chatApp",
+  "version": "0.0.1",
+  "private":false,
+  "scripts": {
+    "start": "node ./bin/server.js"
+  },
+  "main": "server.js",
+  "dependencies": {
+    "connect-redis": "latest",
+    "body-parser": "latest",
+    "cookie-parser": "latest",
+    "debug": "latest",
+    "express": "latest",
+    "express-session": "latest",
+    "express-error-handler":"latest",
+    "hjs": "latest",
+    "less-middleware": "latest",
+    "mongoose": "latest",
+    "morgan": "latest",
+    "serve-favicon": "latest",
+    "passport": "latest",
+    "passport-facebook": "latest",
+    "passport-google-oauth2": "latest",
+    "client-sessions":"latest",
+    "socket.io": "latest"
+  }
+}

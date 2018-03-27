@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>ChatRoom</title>
+  <link rel='stylesheet' href='/stylesheets/users.css' />
+  <link rel='stylesheet' href='/stylesheets/resume_css.css' />
+  <link href="/css/theme.css" rel="stylesheet">
+  <link rel='stylesheet' href='/css/bootstrap.css' />
+</head>
+
+
+<body bgcolor="#000000">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+          aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="">ChatRoom</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active">
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="/find?from={{fromuser}}">Find Friends</a>
+          </li>
+          <li>
+            <a href="/group/create?from={{fromuser}}">Create Group</a>
+          </li>
+          <li>
+            <a href="/userLogin/logout?from={{fromuser}}">Logout</a>
+          </li>
+
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </nav>
+
+  <div class="otherUsers">
+    <div class="jumbotron1">
+      <div style="height:50%;width:100%;overflow: scroll;text-align: center;">
+        <h1>People</h1>
+
+        {{#users}}
+
+        <p>
+          <a class="btn btn-primary" href="/users/change?from={{fromuser}}&name={{username}}">{{username}}</a>
+        </p>
+        <br> {{/users}}
+      </div>
+      <br>
+      <br>
+      <div style="height:50%;width:100%;overflow: scroll;text-align: center;">
+        <h1>Groups</h1>
+
+        {{#groups}}
+        <p>
+          <a class="btn btn-warning" href="/users/changegrp?from={{fromuser}}&gname={{groupname}}">{{groupname}}</a>
+        </p>
+        <br> {{/groups}}
+      </div>
+      <br>
+      <br>
+    </div>
+  </div>
+  <div class="receiver">
+    <div class="chat_right">
+
+
+      {{!-- LiveChat :--
+      <a>
+        <ul id="messages"></ul>
+      </a>
+      --Previous History--  --}}
+      {{#posts}}
+      <div class="well">
+        <a>
+          <b>{{from}}:</b>
+        </a>&nbsp;&nbsp;&nbsp;
+        <a> {{content}}</a>
+      </div>
+      {{/posts}} {{#gposts}}
+      <div class="well">
+        <a>
+          <b>{{from}}:</b>
+        </a>&nbsp;&nbsp;&nbsp;
+        <a> {{content}}</a>
+      </div>
+      {{/gposts}}
+
+      <div class="sender">
+        <form method="post" action="/users/add" style="display:inline;">
+          <input type="text" name="from" hidden="hidden" value="{{fromuser}}" />
+          <input type="text" name="to" hidden="hidden" value="{{to}}" />
+          <input type="text" class="sendtext" name="content" id="m" placeholder="Send Message" />
+          <input class="btn btn-primary" type="submit" id="button" value="Send">
+          <br>
+          <br>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="http://cdn.socket.io/socket.io-1.4.5.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+  <script>
+
+    /*var socket = io();
+    var user = prompt("Confirm your userName before starting to text");
+    if (user != null) {
+      socket.emit('user', user);
+    }
+   $('#button').click(function () {
+      socket.emit('chat message', $('#m').val());
+      $('#m').val('');
+      return false;
+    });
+    socket.on('chat message', function (msg) {
+      $('#messages').append($('<li>').text(msg));
+    });
+
+    $('#m').keyup(function (event) {
+      if (event.keyCode == 13) {
+        $('#m').val('');
+      }
+      else {
+        socket.emit('is typing', user);
+      }
+    });*/ //uncomment this for live chatting version.
+
+  </script>
+</body>
+
+</html>

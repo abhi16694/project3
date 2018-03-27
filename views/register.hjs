@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Register</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+     <link rel='stylesheet' href='/css/bootstrap.min.css' />
+      <link rel='stylesheet' href='/css/signin.css' />
+       <link rel='stylesheet' href='/stylesheets/resume_css.css' />
+  </head> 
+  <body bgcolor="#000000">
+  <div class="container">
+    <h1>Register to ChatRoom</h1>
+    <div class="well">
+    Already have an Account ? <a href="/userLogin" class="btn btn-primary">Click Here</a>
+  <form class="form-signin" action="/userLogin/registeruser" method="post"><br>
+  {{error}}
+  <p><input type="email" class="form-control" name="email" placeholder="Email" required="required" autofocus="autofocus" /></p>
+    <p><input type="text" class="form-control" name="username" placeholder="Username" required="required" /></p>
+    <p><input type="password" class="form-control" name="password" placeholder="Password" required="required" /></p>
+     <p><input type="password" class="form-control" name="passwordconf" placeholder="Confirm Password" required="required" /></p>
+    <p> <input  class="btn btn-lg btn-success btn-block" type="submit" /> </p>
+    
+
+
+    </form>
+    </div>
+  </body>
+</html>
